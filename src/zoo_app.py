@@ -61,7 +61,7 @@ def view_det(roll_no):
 def add_det(animal: Animals):
     try:
         col = get_collection()
-        col.insert_one(animal)
+        col.insert_one(animal.dict())
         return {"status": 200, "data": "Successfully added"}
     except Exception as e:
         print("error on add data " + str(e))
